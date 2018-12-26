@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scn = new Scanner(System.in);
+        int a =scn.nextInt();
+        int b =scn.nextInt();
+        D(a,b);
+
+    }
+    public static void D(int m,int n){
+        int up =1;
+        if(m==0){up=1;}
+        else {
+        for(int i=1;i<=m;i++) {
+            up*=i;
+        }
+        }
+        int down1=1;
+        if(n==0){down1=1;}
+        else {
+            for(int i=1;i<=n;i++){
+                down1*=i;
+            }
+        }
+        int down2=1;
+        if(m-n==0){down2=1;}
+        else {
+            for(int i=1;i<=m-n;i++){
+                down2*=i;
+            }
+        }
+        System.out.println(up/(down1*down2));
+    }
+}
